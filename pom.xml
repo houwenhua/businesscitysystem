@@ -145,5 +145,31 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
+      <!--
+        此plugin可以用
+        利用此plugin，把源代码中的xml文件，
+        打包到相应位置，这里主要是为了打包Mybatis的mapper.xml文件
+        -->
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>1.8</source>
+                  <target>1.8</target>
+              </configuration>
+          </plugin>
+      </plugins>
+      <resources>
+          <resource>
+              <directory>src/main/java</directory>
+              <includes>
+                  <include>**/*.properties</include>
+                  <include>**/*.xml</include>
+              </includes>
+              <filtering>false</filtering>
+          </resource>
+      </resources>
   </build>
 </project>
